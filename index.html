@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainBlast — JS Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- START SCREEN -->
+  <div class="screen" id="screen-start">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="start-card">
+      <div class="logo">⚡</div>
+      <h1>Brain<span>Blast</span></h1>
+      <p class="subtitle">JavaScript bilimingizni sinab ko'ring!</p>
+      <div class="meta-row">
+        <span class="meta-pill">📚 10 savol</span>
+        <span class="meta-pill">⏱ Har savolga 30 son</span>
+        <span class="meta-pill">🏆 Ball yig'ing</span>
+      </div>
+      <button class="btn-start" id="btn-start">Boshlash →</button>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div class="screen hidden" id="screen-quiz">
+    <div class="quiz-header">
+      <div class="q-counter" id="q-counter">1 / 10</div>
+      <div class="timer-wrap">
+        <svg class="timer-ring" viewBox="0 0 44 44">
+          <circle class="ring-bg" cx="22" cy="22" r="18"/>
+          <circle class="ring-fill" id="ring-fill" cx="22" cy="22" r="18"/>
+        </svg>
+        <span class="timer-num" id="timer-num">30</span>
+      </div>
+      <div class="score-display">⭐ <span id="live-score">0</span></div>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="question-card" id="question-card">
+      <div class="q-category" id="q-category">JavaScript</div>
+      <h2 class="q-text" id="q-text">Savol matni shu yerda</h2>
+    </div>
+
+    <div class="options-grid" id="options-grid"></div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div class="screen hidden" id="screen-result">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="result-card">
+      <div class="result-emoji" id="result-emoji">🎉</div>
+      <h2 class="result-title" id="result-title">Zo'r!</h2>
+      <p class="result-subtitle" id="result-subtitle">Siz ajoyib natija ko'rsatdingiz</p>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-num" id="stat-score">0</span>
+          <span class="stat-label">Ball</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-correct">0</span>
+          <span class="stat-label">To'g'ri</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-wrong">0</span>
+          <span class="stat-label">Noto'g'ri</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num" id="stat-time">0s</span>
+          <span class="stat-label">O'rtacha vaqt</span>
+        </div>
+      </div>
+
+      <div class="result-bar-wrap">
+        <div class="result-bar" id="result-bar"></div>
+      </div>
+      <p class="result-pct" id="result-pct">0%</p>
+
+      <div class="btn-row">
+        <button class="btn-retry" id="btn-retry">🔄 Qaytadan</button>
+        <button class="btn-share" id="btn-share">📋 Natijani Nusxalash</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
